@@ -1,0 +1,272 @@
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+<style>
+.page-header { background: url(/static/images/bg1.jpg)no-repeat; position: relative; background-size: cover;margin:0; }
+.container-bg {background-color: #FFFFFF;}
+</style>
+</head>
+   <body>
+    <div class="page-header">
+        
+    
+      <div class="container container-bg">
+	  <br/>
+      <form action = "{{ url_for('.save') }}" method = "POST">
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4"><h3>Fill in your information</h3></div>
+			<div class="col-md-4"></div>
+		
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label>Age</label>
+					<input type="number" class="form-control" name="age" value="16">
+				</div>
+				<div class="form-group">
+					<label>Education</label>
+					<br/>
+					<label class="radio-inline">
+					  <input type="radio" name="education" value="0" checked>&nbsp; > 12 yrs &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="education" value="1">&nbsp; < 12 yrs
+					</label>
+				</div>
+				
+				<div class="form-group">
+					<label>Marital Status</label>
+					<br/>
+					<label class="radio-inline">
+					  <input type="radio" name="maritalSts" value="0" checked>&nbsp; Married &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="maritalSts" value="1">&nbsp; Unmarried &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="maritalSts" value="0">&nbsp; Widow/ Divorcee
+					</label>
+				</div>
+			</div>
+			<div class="col-md-6">
+				
+				<div class="form-group">
+					<label>Did you get adequate prenatal care?</label>
+					<br/>
+					<label class="radio-inline">
+					  <input type="radio" name="prenatal" value="0">&nbsp; Yes &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="prenatal" value="1" checked>&nbsp; No
+					</label>				
+				</div>
+				<div class="form-group">
+					<label>Are you a part of WIC (The Women, Infants and Children’s program) ?</label>
+					<br/>
+					<label class="radio-inline">
+					  <input type="radio" name="wic" value="1">&nbsp; Yes &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="wic" value="0" checked>&nbsp; No
+					</label>
+				</div>
+				<div class="form-group">
+					<label>Are you a Medicaid Recipient ?</label>
+					<br/>
+					<label class="radio-inline">
+					  <input type="radio" name="medicaid" value="1">&nbsp; Yes &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="medicaid" value="0" checked>&nbsp; No
+					</label>
+				</div>
+			</div>
+		</div>
+        <hr style=" border: 3px solid green;border-radius: 1px;"/>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group">
+					<label>What is the source of your household income ?</label>
+					<br/>
+					<label class="radio-inline">
+					  <input type="radio" name="income" value="0" checked>&nbsp; money from a business, fees, dividends or rental income&nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="income" value="0">&nbsp; paycheck or money from a job &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="income" value="1">&nbsp; money from family or friends
+					</label>					
+				</div>
+				<div class="form-group">
+					<label>Was your pregnancy intended or planned ?</label>
+					<br/>
+					<label class="radio-inline">
+					  <input type="radio" name="intention" value="0" checked>&nbsp; Yes &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="intention" value="1">&nbsp; No
+					</label>				
+				</div>
+				<div class="form-group">
+					<label>Were you using any birth control means or contraception when this pregnancy happened ?</label>
+					<br/>
+					<label class="radio-inline">
+					  <input type="radio" name="contraception" value="1">&nbsp; Yes &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="contraception" value="0" checked>&nbsp; No
+					</label>				
+				</div>
+				<div class="form-group">
+					<label>What was your baby's weight at birth ?</label>
+					<br/>
+					<label class="radio-inline">
+					  <input type="radio" name="lbw" value="0">&nbsp; Low (<= 2500 grams) &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="lbw" value="1" checked>&nbsp; Normal (> 2500 grams)
+					</label>				
+				</div>
+				<div class="form-group">
+					<label>Did you ever breastfeed or pump breast milk to feed your new baby after delivery ?</label>
+					<br/>
+					<label class="radio-inline">
+					  <input type="radio" name="breastfeed" value="0" checked>&nbsp; Yes &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="breastfeed" value="1">&nbsp; No
+					</label>				
+				</div>
+				<div class="form-group">
+					<label>Did you keep breastfeeding your baby 8 weeks after delivery ?</label>
+					<br/>
+					<label class="radio-inline">
+					  <input type="radio" name="breastfeed8" value="1">&nbsp; Yes &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="breastfeed8" value="0" checked>&nbsp; No
+					</label>				
+				</div>
+				<div class="form-group">
+					<label>Did you smoke before pregnancy? If yes, how did your smoking habits changed after pregnancy?</label>
+					<br/>
+					<label class="radio-inline">
+					  <input type="radio" name="smoking" value="0">&nbsp; Smoker who quit &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="smoking" value="1">&nbsp; Smoker who resumed but #CIGS reduced &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="smoking" value="1">&nbsp; Smoker who resumed but #CIGS increased &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="smoking" value="1">&nbsp; Non Smoker who started smoking &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="smoking" value="0" checked>&nbsp; Non smoker
+					</label>
+				</div>
+				<div class="form-group">
+					<label>Did you drink alchohol before pregnancy? If yes, how did your drinking habits changed after pregnancy?</label>
+					<br/>
+					<label class="radio-inline">
+					  <input type="radio" name="drinking" value="0">&nbsp; Drinker who quit &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="drinking" value="1">&nbsp; Drinker who resumed but #DRNKS reduced &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="drinking" value="1">&nbsp; Drinker who resumed but #DRNKS increased &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="drinking" value="1">&nbsp; Non Drinker who started drinking &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="drinking" value="0" checked>&nbsp; Non Drinker
+					</label>
+				</div>
+				<div class="form-group">
+					<label>During 3 months before you got pregnant, did you have anxiety or depression ?</label>
+					<br/>
+					<label class="radio-inline">
+					  <input type="radio" name="anxiety" value="0">&nbsp; Yes &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="anxiety" value="1" checked>&nbsp; No
+					</label>				
+				</div>
+				<div class="form-group">
+					<label>During the 3 months before you got pregnant with your new baby  did you have heart problems?</label>
+					<br/>
+					<label class="radio-inline">
+					  <input type="radio" name="heart" value="0">&nbsp; Yes &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="heart" value="1" checked>&nbsp; No
+					</label>				
+				</div>
+				<div class="form-group">
+					<label>What was your pre-pregnancy body mass index?</label>
+					<br/>
+					<label class="radio-inline">
+					  <input type="radio" name="obesity" value="0" checked>&nbsp; Not Obese &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="obesity" value="1">&nbsp; Obese
+					</label>				
+				</div>
+				<div class="form-group">
+					<label>Did you ever had fetal death, stillbirth, or miscarriage? </label>
+					<br/>
+					<label class="radio-inline">
+					  <input type="radio" name="miscarriage" value="1">&nbsp; Yes &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="miscarriage" value="0" checked>&nbsp; No
+					</label>				
+				</div>
+				<div class="form-group">
+					<label>If you have had any previous live births, was that child born preterm or had low birth weight (LBW)? </label>
+					<br/>
+					<label class="radio-inline">
+					  <input type="radio" name="previousBirth" value="1">&nbsp; Yes &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="previousBirth" value="0" checked>&nbsp; No
+					</label>				
+				</div>
+				<div class="form-group">
+					<label>During 12 months before you got pregnant, did you face any type of physical abuse?</label>
+					<br/>
+					<label class="radio-inline">
+					  <input type="radio" name="abuse" value="1">&nbsp; Yes &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="abuse" value="0" checked>&nbsp; No
+					</label>				
+				</div>
+				<div class="form-group">
+					<label>During 12 months before you got pregnant, did you experience any type of stress?</label>
+					<br/>
+					<label class="radio-inline">
+					  <input type="radio" name="stress" value="1">&nbsp; Yes &nbsp;
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="stress" value="0" checked>&nbsp; No
+					</label>				
+				</div>
+			</div>
+		</div>
+		 
+         <input type = "submit" value = "submit" /><br>
+      </form>
+      </div>
+	  </div>
+   </body>
+</html>

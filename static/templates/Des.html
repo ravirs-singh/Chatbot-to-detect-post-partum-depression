@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Medibot</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">logo</a>
+
+        </header>
+        
+        <section>
+            <img src="{{mountain.png}}" id="mountain">
+           
+         <h2 id="text">MediBot</h2>
+        <a href="#sec" id="btn">Explore</a>
+        </section>
+        <div class="sec" id="sec">
+            <h2>Report</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae omnis temporibus explicabo illo officia facilis accusamus vitae, sed, dolores, deleniti delectus rerum incidunt odit. Voluptates doloribus magnam maiores iure cum.</p>
+
+        </div>
+
+        
+        <script>
+            let stars=document.getElementById('stars');
+            let text=document.getElementById('text');
+            let btn=document.getElementById('btn');
+            
+
+            window.addEventListener('scroll',function(){
+                let value=window.scrollY;
+                text.style.marginRight=value*4 +'px';
+                text.style.marginTop=value * 1.5 +'px' ;
+                btn.style.marginTop=value * 1.5 + 'px';
+            })
+        </script>
+    </body>
+
+
+</html>
